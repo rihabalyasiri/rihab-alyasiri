@@ -1,0 +1,56 @@
+.footer {
+    padding: 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,1fr));
+    background-color: $color-dark;
+    z-index: 50;
+    position: relative;
+    
+    &__nav {
+        display: flex;
+        text-transform: uppercase;
+        
+        
+        & > * {
+            margin-right: 3rem;
+        }
+    }
+    
+    &__list {
+       list-style: none;
+        
+    }
+    
+    &__link {
+        text-decoration: none;
+        color: $color-gray-wr;
+        font-size: 1.9rem;
+        
+        &:hover {
+            color: $color-primary-dark;
+        }
+        
+    }
+    
+    &__social-media {
+        margin-top: 2rem;
+        & > * {
+            margin-right: 3rem;
+        }
+        
+    }
+    
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill:$color-gray-wr;
+        
+    }
+    .icon-1:hover {fill:$color-white;}
+    .icon-2:hover {fill:#007bb5;}
+    .icon-3:hover {fill:#126567;}
+    
+    &__copyright {
+        font-size: 1.9rem;
+    }
+}

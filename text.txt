@@ -1,0 +1,112 @@
+section 1: Header
+
+Title: Blog. Design. Code.
+Subtitle: Going through the way of the web development one of the best decision that I have took. Try it you regret.
+Button: read my blogs
+
+Background image: Photo by Domenico Loia on Unsplash.
+
+Navigation Bar:  icon open: feather / menu      icon close: material icons / close
+
+Home     icon: icomoon / home
+web development tools  icon: entypo / tools
+about     icon: icomoon / 
+blog      icon: entypo / pencil
+contact    icon: broccolidary / envelope
+
+En/Ar
+
+_____________________________________________________________________________________________________________
+
+section 2: 
+
+Title: web development tools
+Subtitle: Most of the important tools/sites that each developer need it to design and develop websites/Apps easily.
+
+col 1: 
+
+icon:feather / type
+title: Google fonts
+text: It is a typography feature from Google Chrome, that help the web developer to design websits with different fonts.
+
+col 2: 
+
+icon: icomoon / eyedropper
+title: COLORZILLA
+text: It is an extension for Google Chrome or Firefox that assists the web developers to pick up a color, so when you are browsing and your eys fall on an interesting color now you can just with a click pick it.
+
+col 3: 
+
+icon: entypo / ruler
+title: PIXEL ZOOMER
+text: It is an extesion to the Google Chrome and throught it you can as a web developer you can easily get measurement for the boxes or pictures or whatever you are working on and it has also the ability to pick up color values.
+
+col 4: 
+
+icon: material icons / laptop_mac
+title: W3Schools
+text: The largest web development site in the world, you can take a free tutorial in all branches of the web development.
+
+
+col 5: 
+
+icon: feather / camera
+title: Unspalsh
+text: A community of photographers with high resolution photos and usuable for free.
+
+col 6: 
+
+icon: grid
+title: icomoon
+text: One of the largest platform that contains 5500+ icons of all formats for free (Not all the libraries).
+
+___________________________________________________________________________________________________________________
+
+section 3: About
+
+Title: about
+subtitle: Rihab Alyasiri, Web Developer/Designer
+text: Hi! I’m Rihab, I’m self-taught frontend developer/designer with one year of experience and blogger in the field of computer science and programming. As I integrated to this field I felt that I’m special, because the most of the people do not understand the languages that I write on the computer and that gave me an outstanding feelings in my life. Beside I have a passionate to learn more and more in the IT industry. My experience in web development includes the technologies such as HTML5, CSS, SASS, Bootstrap, MYSQL and more than that. I have already studied Communication Engineering then I started with my second Bachelor in Computer Science after noticing the interesting in programming. In my free time I work on my blogs, the idea of the blogs is to influence on the other to take the chance to learn how to code or helping the other, that they already trying to walk in this long field but they are facing obstacles like we all do.
+
+__________________________________________________________________________________________________________________
+
+section 4: Blog
+
+col 1:
+
+image: Photo by William Iven on Unsplash
+title: Footer of the website : position vs. flexbox
+text: comming soon
+related to: html, css
+
+
+col 2:
+
+image: Photo by 🇨🇭 Claudio Schwarz | @purzlbaum on Unsplash
+title: How to transfer binary to decimal, decimal to binary, binary to hexadecimal, hexadecimal to binary?
+text: comming soon 
+related to: computer science
+
+
+col 3:
+
+image:  Photo by 🇨🇭 Claudio Schwarz | @purzlbaum on Unsplash
+title: How to add, subtract, multiply binary numbers
+text: comming soon
+related to: computer science
+
+
+____________________________________________________________________________________________________________________
+
+section 5: contact
+
+text: If you Like to work with me or having any question do not hesitate and send me a message this will please me!
+
+
+__________________________________________________________________________________________________________________
+
+section 6: footer
+
+navbar: Home feature about blog contact 
+icon: linkedin xing github
+text: Copyright © 2019 Build and designed by Rihab Al-yasiri. All rights reserved.

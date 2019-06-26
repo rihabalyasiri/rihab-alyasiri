@@ -1,0 +1,48 @@
+@keyframes open-sidebar {
+    
+    0% {
+        display: 0;
+        transform: translateX(20rem)
+    }
+    
+    40% {
+        display: 1;
+        transform: translateX(15rem);
+    }
+    
+    70% {
+        display: 1;
+        transform: translateX(10rem);
+    }
+    
+    100% {
+        display: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes close-sidebar {
+    
+    0% {
+        display: 0;
+        transform: translateX(0)
+    }
+    
+    40% {
+        display: 1;
+        transform: translateX(5rem);
+    }
+    
+    70% {
+        display: 1;
+        transform: translateX(15rem);
+    }
+    
+    100% {
+        display: 1;
+        transform: translateX(20rem);
+    }
+}
+
+
+

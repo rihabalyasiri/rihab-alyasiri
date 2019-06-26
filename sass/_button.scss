@@ -1,0 +1,49 @@
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    text-decoration: none;
+    width: 30rem;
+    height: auto;
+    background-color: $color-secondary;
+    color: $color-white;
+    font-weight: 600;
+    text-align: center;
+    padding: 1.5rem 4rem;
+    transition: background-color .2s;
+    text-transform: uppercase;
+    box-shadow: 0 4rem 5rem rgba($color-dark,.3);
+    border-radius: 20rem;
+    
+    margin: 10% 0 0 30%;
+    
+    @include responsive($bp-8) {
+            width: 20rem;
+        
+        }
+}
+
+
+.btn:hover,
+.btn:active {
+    background-color: $color-secondary-light;
+    color: $color-dark;
+    font-weight: 300;
+    transform: translateY(2px);
+    box-shadow: 0 4rem 5rem rgba($color-dark,.3);
+}
+
+.btn-contact {
+    background-color: $color-secondary-dark;
+    color: $color-gray-bg !important;
+
+    &:hover {
+        background-color: $color-primary-dark;
+    }
+    
+    &:active {
+        background-color: $color-secondary-dark;
+    color: $color-white;
+    }
+    
+    
+}

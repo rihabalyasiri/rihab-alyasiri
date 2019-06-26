@@ -1,0 +1,126 @@
+.blogs {
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
+    grid-gap: 3rem;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right,rgba($color-secondary-dark,.4),rgba($color-secondary,.2));
+    
+    padding: 3% 10%;
+    
+    @include responsive($bp-12) {
+            padding: 3% 6%;
+        }
+    
+    @include responsive($bp-10) {
+            padding: 3% 2%;
+        }
+    
+    @include responsive($bp-8) {
+           padding: 2% 8%;
+        }
+    
+    &__heading {
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        margin: 0 auto;
+        
+        @include responsive($bp-12) {
+            font-size: 9rem;
+        }
+      
+        @include responsive($bp-10) {
+            font-size: 8rem;
+        }
+        @include responsive($bp-9) {
+            font-size: 7.4rem;
+        }
+        
+    }
+    
+    
+    &__blog {
+        width: 30rem;
+        height: 50rem;
+        background-color: #fff;
+        box-shadow: 0 3rem 4rem rgba($color-dark, .25);
+        transition: all .3s;
+        
+        
+        display: flex;
+        flex-direction: column;
+        
+        @include responsive($bp-9) {
+            width: 27rem;
+        }
+        
+        @include responsive($bp-8) {
+           width: 30rem;
+        }
+        
+        
+        &:hover {
+            border-bottom: 3px solid $color-primary;
+        }
+        
+        
+    }
+    
+    &__image {
+        height: 20rem;
+        width: 100%;
+        height: auto;
+        
+        
+        
+        img {
+            display: block;
+            max-width: 100%;
+           
+        }
+        
+         img:hover {
+            filter: blur(1px);
+        }
+        
+    }
+ 
+    
+    &__title {
+        line-height: 1.4;
+        padding: 2rem;
+        font-size: 2.6rem;
+        
+        a {
+            text-decoration: none;
+            color: $color-dark;
+        }
+        
+        a:hover {
+            color: $color-primary-dark;
+        }
+        
+    }
+    
+    &__text {
+        color: $color-gray-wr;
+        font-size: 2rem;
+        padding:0 2rem; 
+       
+    }
+    
+    &__related {
+        margin-top: auto;
+        padding: 2rem;
+        
+        
+    }
+    
+    &__icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin-left: 1rem;
+        fill:$color-gray-wr;
+    }
+}

@@ -1,0 +1,132 @@
+#menuToggle {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right:0;
+    background-color: transparent;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+    width: 30rem;
+    height: -webkit-fill-available;
+
+    
+    input {
+       display: inline-block;
+        width: 4rem;
+        height: 3rem;
+        position: absolute;
+        top: 3rem;
+        left: 23rem;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 2;
+        -webkit-touch-callout: none;
+        
+    }
+    
+    span {
+        display: block;
+        width: 4rem;
+        height: 3px;
+        margin-bottom: 8px;
+        position: relative;
+        top: 3rem;
+        left: 23rem;
+        background-color: $color-gray-bg;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+  
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+    }
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: $color-gray-bg;;
+}
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+    background-color: $color-dark;
+
+    
+}
+
+#menu {
+    
+    position: absolute;
+     top: 0;
+    right:0;
+   height: 100%;
+    width: 25rem;
+    list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  padding: 15rem 10rem 10rem 4rem;
+    
+     transform-origin: 0% 0%;
+  transform: translate(0, -100%);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+
+    a {
+        text-decoration: none;
+        font-size: 3rem;
+        color: $color-gray-wr;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        grid-column-gap: 2rem;
+        margin-bottom: 2rem;
+       
+    }
+    a:hover {
+            color: $color-white;
+        }
+    a:hover .menu-icon{
+            fill:$color-primary-dark;
+        }
+    
+     
+    
+    li {
+       list-style: none;
+        
+       
+        
+    }
+    
+    .menu-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill:$color-gray-wr;
+   
+    }
+}

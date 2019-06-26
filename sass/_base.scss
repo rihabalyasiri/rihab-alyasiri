@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;        // 1px = 10rem
+    
+}
+
+.container {
+    font-family: $font-text;
+    font-weight: 300;
+    font-size: 1.7rem;
+    line-height: 1.7;
+    color: $color-gray-wr;
+    box-sizing: border-box;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 90vh repeat(5,min-content);
+    
+    
+}

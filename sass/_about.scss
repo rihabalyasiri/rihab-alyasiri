@@ -1,0 +1,140 @@
+.about {
+    
+    padding: 2% 5%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(50rem,1fr));
+    grid-gap: 3rem;
+    background-color: $color-gray-bg;
+   z-index: 40;
+    position: relative;
+    
+    
+    &__heading {
+        text-align: center;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        
+        @include responsive($bp-12) {
+            font-size: 9rem;
+        }
+      
+        @include responsive($bp-10) {
+            font-size: 8rem;
+        }
+        @include responsive($bp-9) {
+            font-size: 7.4rem;
+        }
+    }
+    
+    &__gallary {
+        
+         @include responsive($bp-9) {
+            display:flex;
+        }
+
+        img {
+            width: 20rem;
+            height: 25rem;
+            box-shadow: 0 1rem 2rem rgba($color-dark,.2);
+            object-fit:cover;
+            display: inline-block;
+             filter: brightness(70%) ;
+            border-radius: 3px;
+            
+            
+            &:hover {
+               z-index: 20;
+                position: relative;
+               filter: brightness(100%);
+            } 
+        }
+        
+    }
+    
+    &__image1 {
+        transform: translate(0,-3rem);
+        
+         @include responsive($bp-12) {
+           transform: translate(0,-3rem);
+        }
+        
+        @include responsive($bp-10) {
+            transform: translate(10rem,-3rem);
+        }
+        
+
+        
+    }
+    
+    &__image2 {
+        transform: translate(-10rem,3rem);
+        
+         @include responsive($bp-12) {
+           transform: translate(0,2rem);
+        }
+        
+        @include responsive($bp-10) {
+            transform: translate(0,3rem);
+        }
+    }
+    
+    &__image3 {
+        transform: translate(18rem,-12rem);
+        
+         @include responsive($bp-12) {
+           transform: translate(0,-3rem);
+        }
+        
+        @include responsive($bp-10) {
+           transform: translate(8rem,-3rem);
+        }
+        
+        @include responsive($bp-8) {
+          transform: translate(1rem,-3rem);
+        }
+    }
+    
+    &__image4 {
+        z-index: 10;
+        position: relative;
+        transform: translate(10rem,0);
+        
+        @include responsive($bp-12) {
+           transform: translate(0,2rem);
+        }
+        
+        @include responsive($bp-10) {
+            transform: translate(0,2rem);
+        }
+        
+        @include responsive($bp-8) {
+          transform: translate(-10rem,2rem);
+        }
+    }
+    
+    &__paragraph {
+        
+    }
+    
+    &__title {
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+        color: $color-dark;
+        
+         @include responsive($bp-12) {
+          margin-top: 2rem;
+        }
+        
+        @include responsive($bp-9) {
+           margin-top: 3rem;
+        }
+    }
+    
+    &__text {
+        font-size: 1.9rem;
+        font-weight: 400;
+        color: $color-dark;
+        
+        
+    }
+}
