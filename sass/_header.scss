@@ -1,5 +1,5 @@
 .header {
-    background-image: linear-gradient(to bottom, rgba($color-dark,.8),rgba($color-dark,.8)), url(../img/header-bg-min.jpg);
+    background-image: linear-gradient(to bottom, rgba($color-dark,.8),rgba($color-dark,.8)), url(../img/header-bg-s.jpg);
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -8,17 +8,45 @@
     
     
     &__logo {
-        width: 8rem;
+        width: 20rem;
         height: auto;
         margin-left: 3rem;
         margin-top: 3rem;
         display: inline-block;
+        
+         @include responsive($bp-768) {
+             width: 17rem;
+        }
+        
+        @include responsive($bp-480) {
+             width: 12rem;
+        }
+        
+         @include responsive($bp-320) {
+             margin-left: 1.5rem;
+             width: 10rem;
+        }
+
    
     }
     
     
     &__heading {
     @extend %centering;
+        width: 75rem;
+        
+  
+        
+        @include responsive($bp-5) {
+            width: 45rem;
+            transform: translate(-27rem,-10rem);
+            
+        }
+        
+         @include responsive($bp-480) {
+             width: 40rem;
+             margin-left: 6rem;
+        }
        
     }
     
@@ -29,10 +57,11 @@
         @include responsive($bp-12) {
             font-size: 9rem;
         }
-      
-        @include responsive($bp-10) {
+        @include responsive($bp-1024) {
             font-size: 8rem;
         }
+      
+       
         
         @include responsive($bp-9) {
             font-size: 7.4rem;
@@ -40,6 +69,24 @@
         
         @include responsive($bp-8) {
             font-size: 6.5rem;
+        }
+        
+         @include responsive($bp-768) {
+            font-size: 6.3rem;
+        }
+        
+        @include responsive($bp-7) {
+            font-size: 5.7rem;
+        }
+        
+        @include responsive($bp-640) {
+         
+        font-size:5.2rem;
+       
+        }
+        
+         @include responsive($bp-6) {
+            font-size: 4.8rem;
         }
         
        
@@ -52,6 +99,10 @@
         margin-top: 3%;
         color: $color-white;
         
+         @include responsive($bp-1024) {
+            font-size: 2.5rem;
+        }
+        
         @include responsive($bp-9) {
             font-size: 2.2rem;
         }
@@ -60,7 +111,22 @@
             font-size: 2rem;
         }
         
+         @include responsive($bp-480) {
+             br {
+                 display: none;
+             }
+        }
+        
+         @include responsive($bp-320) {
+            width: 80%;
+             padding-left: 6rem;
+        }
+
+        
+        
+        
+    
+        
         
     }
-    
 }

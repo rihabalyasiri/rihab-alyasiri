@@ -15,7 +15,7 @@ $color-gray-wr:#666666;
 $font-title:'Economica', sans-serif;
 $font-text:'Yantramanav', sans-serif;
 
-$bp-12:75em;
+$bp-12:75em;              // em = 1200px/16px
 $bp-11:68.75em;
 $bp-10:62.5em;
 $bp-9:56.25em;
@@ -24,3 +24,8 @@ $bp-7:43.75em;
 $bp-6:37.5em;
 $bp-5:31.25em;
 $bp-4:25em;
+$bp-1024:64em;
+$bp-768:48em;
+$bp-640:40em;
+$bp-480:30em;
+$bp-320:20em;

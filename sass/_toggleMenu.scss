@@ -9,9 +9,14 @@
     user-select: none;
     width: 30rem;
     height: -webkit-fill-available;
+    
+
+    }
+    
+    
 
     
-    input {
+    .input {
        display: inline-block;
         width: 4rem;
         height: 3rem;
@@ -23,9 +28,21 @@
         z-index: 2;
         -webkit-touch-callout: none;
         
+         @include responsive($bp-5) {
+           
+            transform: translate(-6rem,0);
+            
+        }
+        
+         @include responsive($bp-480) {
+           
+            transform: translate(0,1rem);
+            
+        }
+        
     }
     
-    span {
+    .line {
         display: block;
         width: 4rem;
         height: 3px;
@@ -41,40 +58,72 @@
         transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
               opacity 0.55s ease;
+        
+        @include responsive($bp-5) {
+           
+            transform: translate(-6rem,0);
+            
+        }
+        
+        @include responsive($bp-480) {
+           
+            width: 3.5rem;
+            height: 2px;
+             transform: translate(0,1rem);
+            
+        }
     }
-}
+
 
 #menuToggle span:first-child
 {
   transform-origin: 0% 0%;
+    
 }
 
 #menuToggle span:nth-last-child(2)
 {
   transform-origin: 0% 100%;
+    
 }
+
+
 
 #menuToggle input:checked ~ span
 {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
-  background: $color-gray-bg;;
+  background-color: $color-gray-bg;
+    
 }
 #menuToggle input:checked ~ span:nth-last-child(3)
 {
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
+    
+    
+    
+   
 }
 
 #menuToggle input:checked ~ span:nth-last-child(2)
 {
   transform: rotate(-45deg) translate(0, -1px);
+ 
 }
 
 #menuToggle input:checked ~ ul
 {
   transform: none;
     background-color: $color-dark;
+    
+    @include responsive($bp-5) {
+           
+          width: 56rem;
+        
+            
+        }
+    
 
     
 }
@@ -94,6 +143,30 @@
   transform: translate(0, -100%);
   
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    
+     @include responsive($bp-5) {
+           
+          width: 56rem;
+            
+        }
+    
+     @include responsive($bp-480) {
+           padding-left: 23rem ;
+           
+          
+            
+        }
+    
+      @include responsive($bp-320) {
+          transform: translate(20rem,-100%);
+          padding-left: 32rem;
+           
+          
+            
+        }
+    
+   
+   
 
 
     a {
@@ -105,6 +178,11 @@
         align-items: center;
         grid-column-gap: 2rem;
         margin-bottom: 2rem;
+        
+         @include responsive($bp-320) {
+            font-size: 2.5rem;
+        }
+
        
     }
     a:hover {
@@ -127,6 +205,12 @@
         width: 2.5rem;
         height: 2.5rem;
         fill:$color-gray-wr;
+        
+         @include responsive($bp-320) {
+            width: 2.3rem;
+             height: 2.3rem;
+        }
+
    
     }
 }

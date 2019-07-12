@@ -10,6 +10,14 @@
         display: flex;
         text-transform: uppercase;
         
+        @include responsive($bp-320) {
+            flex-direction: column;
+            
+        }
+
+        
+        
+        
         
         & > * {
             margin-right: 3rem;
@@ -26,6 +34,9 @@
         color: $color-gray-wr;
         font-size: 1.9rem;
         
+        @include responsive($bp-480) {
+            font-size: 1.7rem;
+        }
         &:hover {
             color: $color-primary-dark;
         }
@@ -52,5 +63,14 @@
     
     &__copyright {
         font-size: 1.9rem;
+        
+         @include responsive($bp-480) {
+            font-size: 1.6rem;
+             width: 43rem;
+        }
+        
+         @include responsive($bp-320) {
+            width: 28rem;
+        }
     }
 }
