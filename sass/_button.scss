@@ -7,6 +7,7 @@
     background-color: $color-secondary;
     color: $color-white;
     font-weight: 600;
+    font-size: 2rem;
     text-align: center;
     padding: 1.5rem 4rem;
     transition: background-color .2s;
@@ -20,8 +21,45 @@
             width: 20rem;
         
         }
-}
+    
+    @include responsive($bp-768) {
+             width: 30rem;
+        font-size:1.8rem;
+       
+        }
+    
+    @include responsive($bp-640) {
+         
+        font-size:1.6rem;
+        width: 27rem;
+        
+        
+       
+        }
+    
+   
+    
+    @include responsive($bp-6) {
+            width: 18rem;
+        padding: 1.5rem 2rem;
+        }
+    
+    
+    @include responsive($bp-480) {
+         
+        font-size:1.4rem;
+        width: 18rem;
+        
+        
+       
+        }
+    
+     @include responsive($bp-320) {
+            width: 14rem;
+         font-size: 1.3rem;
+        }
 
+}
 
 .btn:hover,
 .btn:active {
@@ -30,6 +68,8 @@
     font-weight: 300;
     transform: translateY(2px);
     box-shadow: 0 4rem 5rem rgba($color-dark,.3);
+    
+    
 }
 
 .btn-contact {

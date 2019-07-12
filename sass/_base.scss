@@ -23,5 +23,24 @@ html {
     grid-template-columns: 1fr;
     grid-template-rows: 90vh repeat(5,min-content);
     
+    @include responsive($bp-480) {
+        grid-template-columns: 48rem;
+        overflow-x: hidden;
+    }
+    
+     
+    @include responsive($bp-320) {
+        grid-template-columns: 32rem;
+        overflow-x: hidden;
+        
+    }
+    
+    @include responsive($bp-640) {
+        
+        overflow-x: hidden;
+        
+    }
+    
+    
     
 }

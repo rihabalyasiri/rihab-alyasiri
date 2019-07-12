@@ -3,8 +3,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(25rem,1fr));
     grid-gap: 3rem;
-    align-items: center;
-    justify-content: center;
+   
     background-image: linear-gradient(to right,rgba($color-secondary-dark,.4),rgba($color-secondary,.2));
     
     padding: 3% 10%;
@@ -13,13 +12,37 @@
             padding: 3% 6%;
         }
     
-    @include responsive($bp-10) {
+     @include responsive($bp-1024) {
             padding: 3% 2%;
         }
+    
+   
     
     @include responsive($bp-8) {
            padding: 2% 8%;
         }
+    
+     @include responsive($bp-7) {
+             padding: 2% 5%;
+        }
+    
+    @include responsive($bp-640) {
+              grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
+      
+        }
+   
+    
+     @include responsive($bp-6) {
+              grid-template-columns: repeat(auto-fit,minmax(25rem,30rem));
+        }
+    
+    @include responsive($bp-5) {
+              grid-template-columns: repeat(auto-fit,minmax(25rem,30rem));
+        }
+   
+   
+    
+   
     
     &__heading {
         grid-column: 1/-1;
@@ -37,6 +60,25 @@
             font-size: 7.4rem;
         }
         
+        @include responsive($bp-7) {
+            font-size: 6rem;
+        }
+        
+        @include responsive($bp-6) {
+            font-size: 5.5rem;
+        }
+        
+        @include responsive($bp-480) {
+            font-size: 5.3rem;
+            margin-left: 9rem;
+        }
+        
+         @include responsive($bp-320) {
+           font-size: 4.5rem;
+             margin-left: 5rem;
+        }
+
+        
     }
     
     
@@ -46,10 +88,17 @@
         background-color: #fff;
         box-shadow: 0 3rem 4rem rgba($color-dark, .25);
         transition: all .3s;
-        
-        
         display: flex;
         flex-direction: column;
+         border-top-left-radius: 3px;
+         border-top-right-radius: 3px;
+       
+        
+        
+        
+        &:hover {
+            border-bottom: 3px solid $color-primary;
+        }
         
         @include responsive($bp-9) {
             width: 27rem;
@@ -59,10 +108,30 @@
            width: 30rem;
         }
         
-        
-        &:hover {
-            border-bottom: 3px solid $color-primary;
+         
+     @include responsive($bp-640) {
+         
+         width: 40rem;
+         align-self: flex-end;
+         margin-left: 8rem;
+       
         }
+        
+        @include responsive($bp-480) {
+         
+            width: 38rem;
+            margin-left: 2rem;
+       
+        }
+        
+         @include responsive($bp-320) {
+            width: 27rem;
+             margin-left: -2px;
+             
+            
+        }
+
+        
         
         
     }
@@ -71,12 +140,16 @@
         height: 20rem;
         width: 100%;
         height: auto;
+       
         
         
         
         img {
             display: block;
             max-width: 100%;
+            overflow: hidden;
+             border-top-left-radius: 3px;
+             border-top-right-radius: 3px;
            
         }
         
@@ -113,7 +186,6 @@
     &__related {
         margin-top: auto;
         padding: 2rem;
-        
         
     }
     

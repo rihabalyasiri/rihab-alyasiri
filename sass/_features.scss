@@ -5,6 +5,10 @@
     grid-gap: 6rem;
     background-color: $color-gray-bg;
     
+     @include responsive($bp-5) {
+            grid-template-columns: repeat(auto-fit,minmax(25rem,40rem));
+        }
+    
     .feature {
         display: flex;
         flex-direction: column;
@@ -17,13 +21,40 @@
             @include responsive($bp-12) {
             font-size: 9rem;
         }
-      
-        @include responsive($bp-10) {
+             @include responsive($bp-1024) {
             font-size: 8rem;
         }
-            @include responsive($bp-9) {
+      
+   
+        @include responsive($bp-9) {
             font-size: 7.4rem;
         }
+            
+             @include responsive($bp-768) {
+         
+                font-size:7rem;
+     
+        }
+   
+            
+             @include responsive($bp-7) {
+            font-size: 6rem;
+        }
+            
+             @include responsive($bp-6) {
+            font-size: 5.5rem;
+        }
+            
+            
+         @include responsive($bp-480) {
+            font-size: 5.3rem;
+        }
+            
+         @include responsive($bp-320) {
+           font-size: 3.6rem;
+        }
+
+       
         }
         
         &__subtitle {
@@ -34,6 +65,20 @@
             align-self: flex-start;
             width: 50%;
             text-align: center;
+            
+               @include responsive($bp-640) {
+                width: 70%;
+        }
+            
+            @include responsive($bp-480) {
+                width: 70%;
+        }
+            
+             @include responsive($bp-320) {
+                width: 95%;
+                 font-size: 1.7rem;
+        }
+
             
         }
        
@@ -77,11 +122,17 @@
         
         &__text {
             text-align: center;
-            font-size: 1.9rem;
+            font-size: 2.2rem;
             font-weight: 500;
             
             @include responsive($bp-10) {
             font-weight: 600;
+        }
+            
+            @include responsive($bp-768) {
+         
+                font-size:1.9rem;
+     
         }
             
             
