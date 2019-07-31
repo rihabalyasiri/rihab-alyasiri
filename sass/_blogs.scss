@@ -25,6 +25,9 @@
      @include responsive($bp-7) {
              padding: 2% 5%;
         }
+      @include responsive($bp-390) {
+             padding: 2% 0%;
+        }
     
     @include responsive($bp-640) {
               grid-template-columns: repeat(auto-fit,minmax(30rem,1fr));
@@ -39,6 +42,12 @@
     @include responsive($bp-5) {
               grid-template-columns: repeat(auto-fit,minmax(25rem,30rem));
         }
+    
+     @include responsive($bp-390) {
+         
+           padding-bottom: 5rem;
+       
+        }
    
    
     
@@ -48,6 +57,7 @@
         grid-column: 1/-1;
         grid-row: 1/2;
         margin: 0 auto;
+        font-weight: 100;
         
         @include responsive($bp-12) {
             font-size: 9rem;
@@ -60,9 +70,10 @@
             font-size: 7.4rem;
         }
         
-        @include responsive($bp-7) {
-            font-size: 6rem;
+         @include respond(tab) {
+            font-size: 5.5rem;
         }
+   
         
         @include responsive($bp-6) {
             font-size: 5.5rem;
@@ -72,6 +83,22 @@
             font-size: 5.3rem;
             margin-left: 9rem;
         }
+        
+         @include respond(samsung-10) {
+        font-size: 4.2rem;
+    }
+        
+         @include responsive($bp-390) {
+            font-size: 4.8rem;
+        }
+        
+         @include respond(iphone-8) {
+            font-size: 3.9rem;
+    }
+        
+         @include respond(samsung-9) {
+            font-size: 3.7rem;
+    }
         
          @include responsive($bp-320) {
            font-size: 4.5rem;
@@ -124,6 +151,31 @@
        
         }
         
+        @include respond(samsung-10) {
+         width: 35rem;
+            margin-left: 0rem;
+       
+    }
+        
+        @include responsive($bp-390) {
+         
+            width: 30rem;
+            margin-left: 4rem;
+       
+        }
+        
+         @include respond(iphone-8) {
+             width: 29rem;
+             margin-left: 3.5rem;
+    }
+        
+         @include respond(samsung-9) {
+            width: 29rem;
+             margin-left: 2.5rem;
+    }
+        
+         
+        
          @include responsive($bp-320) {
             width: 27rem;
              margin-left: -2px;
@@ -165,6 +217,10 @@
         padding: 2rem;
         font-size: 2.6rem;
         
+        @include respond(samsung-10) {
+            font-size: 2.3rem;
+        }
+        
         a {
             text-decoration: none;
             color: $color-dark;
@@ -181,6 +237,11 @@
         font-size: 2rem;
         padding:0 2rem; 
        
+         
+        @include respond(samsung-10) {
+            font-size: 1.8rem;
+        }
+        
     }
     
     &__related {

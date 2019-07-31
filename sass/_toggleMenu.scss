@@ -8,7 +8,7 @@
     -webkit-user-select: none;
     user-select: none;
     width: 30rem;
-    height: -webkit-fill-available;
+    height:-webkit-fill-available ;
     
 
     }
@@ -119,10 +119,16 @@
     
     @include responsive($bp-5) {
            
-          width: 56rem;
+          width: 55rem;
+        height: 60rem;
         
             
         }
+    
+     @include respond(samsung-10) {
+       height: 78rem;
+    }
+    
     
 
     
@@ -131,77 +137,19 @@
 #menu {
     
     position: absolute;
-     top: 0;
+    top: 0;
     right:0;
-   height: 100%;
+    height: 100%;
     width: 25rem;
-    list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  padding: 15rem 10rem 10rem 4rem;
-    
-     transform-origin: 0% 0%;
-  transform: translate(0, -100%);
-  
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-    
-     @include responsive($bp-5) {
-           
-          width: 56rem;
-            
-        }
-    
-     @include responsive($bp-480) {
-           padding-left: 23rem ;
-           
-          
-            
-        }
-    
-      @include responsive($bp-320) {
-          transform: translate(20rem,-100%);
-          padding-left: 32rem;
-           
-          
-            
-        }
-    
-   
-   
+    -webkit-font-smoothing: antialiased;
+    padding: 15rem 10rem 10rem 4rem;
+    transform-origin: 0% 100%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    transition: all .3s;
 
-
-    a {
-        text-decoration: none;
-        font-size: 3rem;
-        color: $color-gray-wr;
-        display: grid;
-        grid-template-columns: max-content max-content;
-        align-items: center;
-        grid-column-gap: 2rem;
-        margin-bottom: 2rem;
         
-         @include responsive($bp-320) {
-            font-size: 2.5rem;
-        }
-
-       
-    }
-    a:hover {
-            color: $color-white;
-        }
-    a:hover .menu-icon{
-            fill:$color-primary-dark;
-        }
-    
-     
-    
-    li {
-       list-style: none;
-        
-       
-        
-    }
-    
-    .menu-icon {
+        .menu-icon {
         width: 2.5rem;
         height: 2.5rem;
         fill:$color-gray-wr;
@@ -213,4 +161,85 @@
 
    
     }
+    
+
+    
+     @include responsive($bp-5) {
+           
+          width: 55rem;
+            
+        }
+    
+     @include responsive($bp-480) {
+           padding-left: 23rem ;
+           
+          
+            
+        }
+    
+     @include respond(samsung-10) {
+       transform: translate(100%,0%);
+          padding-left: 28rem;
+    }
+    
+    
+     @include responsive($bp-390) {
+             padding-left: 28rem;
+        transform: translate(100%,0%);
+        }
+    
+      @include responsive($bp-320) {
+          transform: translate(100%,0%);
+          padding-left: 32rem;
+           
+          
+            
+        }
+    
+   
+   
+
+
+    li {
+       
+        list-style: none;
+        color: $color-gray-wr;
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        grid-column-gap: 2rem;
+        margin-bottom: 2rem;
+  
+         
+        
+         @include responsive($bp-320) {
+            font-size: 2.5rem;
+        }
+
+    }
+    
+    a {
+        text-decoration: none;
+        font-size: 2.5rem;
+         color: $color-gray-wr;
+        
+    }
+    
+    a:hover {
+        color: $color-primary-dark;
+    }
+    
+    a:hover ~ .menu-icon {
+        fill:$color-primary-dark;
+    }
+    
+    
+   
+   
+    
 }
+
+
+
+
+

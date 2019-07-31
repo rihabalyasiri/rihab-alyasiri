@@ -6,7 +6,7 @@
     height: auto;
     background-color: $color-secondary;
     color: $color-white;
-    font-weight: 600;
+    font-weight: 300;
     font-size: 2rem;
     text-align: center;
     padding: 1.5rem 4rem;
@@ -54,6 +54,11 @@
        
         }
     
+    
+    @include responsive($bp-390) {
+             width: 16rem;
+        }
+    
      @include responsive($bp-320) {
             width: 14rem;
          font-size: 1.3rem;
@@ -86,4 +91,12 @@
     }
     
     
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: $color-primary-dark;
 }

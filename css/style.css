@@ -1,13 +1,19 @@
-.header__heading, .contact__box {
+.header__heading, .contact__box, .popup__message-box, .blog__heading {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); }
 
-.header:after {
+.header:after, .blog-header:after {
   content: "";
   display: table;
   clear: both; }
+
+@keyframes goDown {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
 
 *,
 *::after,
@@ -16,8 +22,15 @@
   margin: 0;
   box-sizing: inherit; }
 
-html {
-  font-size: 62.5%; }
+html, body {
+  font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; }
+  @media only screen and (max-width: 25.875em) {
+    html, body {
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch; } }
 
 .container {
   font-family: "Yantramanav", sans-serif;
@@ -26,20 +39,19 @@ html {
   line-height: 1.7;
   color: #666666;
   box-sizing: border-box;
+  text-decoration: none;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 90vh repeat(5, min-content); }
   @media only screen and (max-width: 30em) {
     .container {
-      grid-template-columns: 48rem;
-      overflow-x: hidden; } }
+      grid-template-columns: 48rem; } }
+  @media only screen and (max-width: 24.37em) {
+    .container {
+      grid-template-columns: 39rem; } }
   @media only screen and (max-width: 20em) {
     .container {
-      grid-template-columns: 32rem;
-      overflow-x: hidden; } }
-  @media only screen and (max-width: 40em) {
-    .container {
-      overflow-x: hidden; } }
+      grid-template-columns: 32rem; } }
 
 .header {
   background-image: linear-gradient(to bottom, rgba(22, 10, 3, 0.8), rgba(22, 10, 3, 0.8)), url(../img/header-bg-s.jpg);
@@ -47,6 +59,9 @@ html {
   background-position: center;
   background-attachment: fixed;
   position: relative; }
+  @media only screen and (max-width: 24.37em) {
+    .header {
+      padding-bottom: 5rem; } }
   .header__logo {
     width: 20rem;
     height: auto;
@@ -59,6 +74,9 @@ html {
     @media only screen and (max-width: 30em) {
       .header__logo {
         width: 12rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .header__logo {
+        margin-left: 2rem; } }
     @media only screen and (max-width: 20em) {
       .header__logo {
         margin-left: 1.5rem;
@@ -90,7 +108,7 @@ html {
         font-size: 6.5rem; } }
     @media only screen and (max-width: 48em) {
       .header__title {
-        font-size: 6.3rem; } }
+        font-size: 9rem; } }
     @media only screen and (max-width: 43.75em) {
       .header__title {
         font-size: 5.7rem; } }
@@ -103,19 +121,25 @@ html {
   .header__subtitle {
     text-align: center;
     margin-top: 3%;
-    color: #E2E0DB; }
-    @media only screen and (max-width: 64em) {
+    color: #E2E0DB;
+    display: block; }
+    .header__subtitle br {
+      display: none; }
+    @media only screen and (max-width: 48em) {
       .header__subtitle {
-        font-size: 2.5rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .header__subtitle {
-        font-size: 2.2rem; } }
-    @media only screen and (max-width: 56.25em) {
-      .header__subtitle {
-        font-size: 2rem; } }
+        font-size: 3rem; } }
     @media only screen and (max-width: 30em) {
       .header__subtitle br {
         display: none; } }
+    @media only screen and (max-width: 25.875em) {
+      .header__subtitle {
+        font-size: 1.9rem; }
+        .header__subtitle br {
+          display: block; } }
+    @media only screen and (max-width: 24.37em) {
+      .header__subtitle {
+        width: 30rem;
+        padding-left: 8rem; } }
     @media only screen and (max-width: 20em) {
       .header__subtitle {
         width: 80%;
@@ -123,8 +147,8 @@ html {
 
 h1 {
   font-family: "Economica", sans-serif;
-  font-weight: 400;
-  font-size: 10rem;
+  font-weight: 100;
+  font-size: 9rem;
   line-height: 1.7;
   color: #160A03;
   word-spacing: 1.7;
@@ -132,17 +156,33 @@ h1 {
 
 h2 {
   font-family: "Economica", sans-serif;
-  font-weight: 400;
-  font-size: 3rem;
+  font-size: 6rem;
+  font-weight: normal;
   line-height: 1.7;
   letter-spacing: 1.7;
   text-transform: uppercase; }
 
 h3 {
   font-family: "Yantramanav", sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
-  font-size: 2.7rem;
+  font-size: 2.9rem;
+  line-height: 1.7;
+  letter-spacing: 1.7; }
+
+h4 {
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 3rem;
+  line-height: 1.7;
+  letter-spacing: 1.7; }
+
+h5 {
+  display: inline;
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
   line-height: 1.7;
   letter-spacing: 1.7; }
 
@@ -154,7 +194,7 @@ h3 {
   height: auto;
   background-color: #017E80;
   color: #E2E0DB;
-  font-weight: 600;
+  font-weight: 300;
   font-size: 2rem;
   text-align: center;
   padding: 1.5rem 4rem;
@@ -187,6 +227,10 @@ h3 {
     .btn:visited {
       font-size: 1.4rem;
       width: 18rem; } }
+  @media only screen and (max-width: 24.37em) {
+    .btn:link,
+    .btn:visited {
+      width: 16rem; } }
   @media only screen and (max-width: 20em) {
     .btn:link,
     .btn:visited {
@@ -210,6 +254,12 @@ h3 {
     background-color: #014a4c;
     color: #E2E0DB; }
 
+a {
+  text-decoration: none; }
+
+a:hover {
+  color: #cc8f00; }
+
 .features {
   padding: 3% 10%;
   display: grid;
@@ -219,6 +269,19 @@ h3 {
   @media only screen and (max-width: 31.25em) {
     .features {
       grid-template-columns: repeat(auto-fit, minmax(25rem, 40rem)); } }
+  @media only screen and (max-width: 25.875em) {
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem));
+      padding: 3% 3%; } }
+  @media only screen and (max-width: 24.37em) {
+    .features {
+      padding-bottom: 5rem; } }
+  @media only screen and (max-width: 23.4375em) {
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 35rem)); } }
+  @media only screen and (max-width: 22.5em) {
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 33rem)); } }
   .features .feature {
     display: flex;
     flex-direction: column; }
@@ -228,16 +291,16 @@ h3 {
       margin: 0 auto; }
       @media only screen and (max-width: 75em) {
         .features .feature__heading {
-          font-size: 9rem; } }
+          font-size: 4.9rem; } }
       @media only screen and (max-width: 64em) {
         .features .feature__heading {
-          font-size: 8rem; } }
+          font-size: 4.8rem; } }
       @media only screen and (max-width: 56.25em) {
         .features .feature__heading {
-          font-size: 7.4rem; } }
+          font-size: 4.6rem; } }
       @media only screen and (max-width: 48em) {
         .features .feature__heading {
-          font-size: 7rem; } }
+          font-size: 5.5rem; } }
       @media only screen and (max-width: 43.75em) {
         .features .feature__heading {
           font-size: 6rem; } }
@@ -247,11 +310,20 @@ h3 {
       @media only screen and (max-width: 30em) {
         .features .feature__heading {
           font-size: 5.3rem; } }
+      @media only screen and (max-width: 25.875em) {
+        .features .feature__heading {
+          font-size: 4rem; } }
+      @media only screen and (max-width: 23.4375em) {
+        .features .feature__heading {
+          font-size: 3.9rem; } }
+      @media only screen and (max-width: 22.5em) {
+        .features .feature__heading {
+          font-size: 3.7rem;
+          margin-left: -3px; } }
       @media only screen and (max-width: 20em) {
         .features .feature__heading {
           font-size: 3.6rem; } }
     .features .feature__subtitle {
-      font-size: 1.9rem;
       grid-column: 1/-1;
       grid-row: 2/3;
       justify-self: center;
@@ -317,6 +389,9 @@ h3 {
   @media only screen and (max-width: 43.75em) {
     .blogs {
       padding: 2% 5%; } }
+  @media only screen and (max-width: 24.37em) {
+    .blogs {
+      padding: 2% 0%; } }
   @media only screen and (max-width: 40em) {
     .blogs {
       grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr)); } }
@@ -326,10 +401,14 @@ h3 {
   @media only screen and (max-width: 31.25em) {
     .blogs {
       grid-template-columns: repeat(auto-fit, minmax(25rem, 30rem)); } }
+  @media only screen and (max-width: 24.37em) {
+    .blogs {
+      padding-bottom: 5rem; } }
   .blogs__heading {
     grid-column: 1/-1;
     grid-row: 1/2;
-    margin: 0 auto; }
+    margin: 0 auto;
+    font-weight: 100; }
     @media only screen and (max-width: 75em) {
       .blogs__heading {
         font-size: 9rem; } }
@@ -339,9 +418,9 @@ h3 {
     @media only screen and (max-width: 56.25em) {
       .blogs__heading {
         font-size: 7.4rem; } }
-    @media only screen and (max-width: 43.75em) {
+    @media only screen and (max-width: 48em) {
       .blogs__heading {
-        font-size: 6rem; } }
+        font-size: 5.5rem; } }
     @media only screen and (max-width: 37.5em) {
       .blogs__heading {
         font-size: 5.5rem; } }
@@ -349,6 +428,18 @@ h3 {
       .blogs__heading {
         font-size: 5.3rem;
         margin-left: 9rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .blogs__heading {
+        font-size: 4.2rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .blogs__heading {
+        font-size: 4.8rem; } }
+    @media only screen and (max-width: 23.4375em) {
+      .blogs__heading {
+        font-size: 3.9rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .blogs__heading {
+        font-size: 3.7rem; } }
     @media only screen and (max-width: 20em) {
       .blogs__heading {
         font-size: 4.5rem;
@@ -380,6 +471,22 @@ h3 {
       .blogs__blog {
         width: 38rem;
         margin-left: 2rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .blogs__blog {
+        width: 35rem;
+        margin-left: 0rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .blogs__blog {
+        width: 30rem;
+        margin-left: 4rem; } }
+    @media only screen and (max-width: 23.4375em) {
+      .blogs__blog {
+        width: 29rem;
+        margin-left: 3.5rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .blogs__blog {
+        width: 29rem;
+        margin-left: 2.5rem; } }
     @media only screen and (max-width: 20em) {
       .blogs__blog {
         width: 27rem;
@@ -400,6 +507,9 @@ h3 {
     line-height: 1.4;
     padding: 2rem;
     font-size: 2.6rem; }
+    @media only screen and (max-width: 25.875em) {
+      .blogs__title {
+        font-size: 2.3rem; } }
     .blogs__title a {
       text-decoration: none;
       color: #160A03; }
@@ -409,6 +519,9 @@ h3 {
     color: #666666;
     font-size: 2rem;
     padding: 0 2rem; }
+    @media only screen and (max-width: 25.875em) {
+      .blogs__text {
+        font-size: 1.8rem; } }
   .blogs__related {
     margin-top: auto;
     padding: 2rem; }
@@ -451,16 +564,17 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
   grid-gap: 3rem;
-  background-color: #F0F0F0;
+  background-color: #160A03;
   z-index: 40;
   position: relative; }
+  @media only screen and (max-width: 24.37em) {
+    .about {
+      padding-bottom: 5rem; } }
   .about__heading {
     text-align: center;
     grid-column: 1/-1;
-    grid-row: 1/2; }
-    @media only screen and (max-width: 75em) {
-      .about__heading {
-        font-size: 9rem; } }
+    grid-row: 1/2;
+    color: #E2E0DB; }
     @media only screen and (max-width: 64em) {
       .about__heading {
         font-size: 8rem; } }
@@ -469,128 +583,81 @@ h3 {
         font-size: 7.4rem; } }
     @media only screen and (max-width: 48em) {
       .about__heading {
-        font-size: 7rem; } }
+        font-size: 5.5rem; } }
     @media only screen and (max-width: 30em) {
       .about__heading {
         margin-left: -2rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .about__heading {
+        font-size: 4.2rem;
+        margin-left: -15rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .about__heading {
+        font-size: 4.8rem;
+        margin-left: -15rem; } }
+    @media only screen and (max-width: 23.4375em) {
+      .about__heading {
+        font-size: 3.9rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .about__heading {
+        font-size: 3.7rem; } }
     @media only screen and (max-width: 20em) {
       .about__heading {
         font-size: 6.5rem;
         margin-left: -20rem; } }
-  @media only screen and (max-width: 56.25em) {
-    .about__gallary {
-      display: flex; } }
-  @media only screen and (max-width: 48em) {
-    .about__gallary {
-      transform: translateX(-7rem); } }
-  @media only screen and (max-width: 40em) {
-    .about__gallary {
-      transform: translateX(-10rem); } }
-  @media only screen and (max-width: 37.5em) {
-    .about__gallary {
-      transform: translateX(-12.5rem); } }
-  .about__gallary img {
-    width: 20rem;
-    height: 25rem;
-    box-shadow: 0 1rem 2rem rgba(22, 10, 3, 0.2);
-    object-fit: cover;
-    display: inline-block;
-    filter: brightness(70%);
-    border-radius: 3px; }
-    .about__gallary img:hover {
-      z-index: 20;
-      position: relative;
-      filter: brightness(100%); }
-  .about__image1 {
-    transform: translate(0, -3rem); }
-    @media only screen and (max-width: 75em) {
-      .about__image1 {
-        transform: translate(0, -3rem); } }
-    @media only screen and (max-width: 62.5em) {
-      .about__image1 {
-        transform: translate(10rem, -3rem); } }
-    @media only screen and (max-width: 30em) {
-      .about__image1 {
-        transform: translate(13rem, -3rem); } }
-    @media only screen and (max-width: 20em) {
-      .about__image1 {
-        transform: translate(18rem, -3rem); } }
-  .about__image2 {
-    transform: translate(-10rem, 3rem); }
-    @media only screen and (max-width: 75em) {
-      .about__image2 {
-        transform: translate(0, 2rem); } }
-    @media only screen and (max-width: 62.5em) {
-      .about__image2 {
-        transform: translate(0, 3rem); } }
-    @media only screen and (max-width: 30em) {
-      .about__image2 {
-        transform: translate(15rem, -3rem); } }
-    @media only screen and (max-width: 20em) {
-      .about__image2 {
-        display: none;
-        visibility: hidden; } }
-  .about__image3 {
-    transform: translate(18rem, -12rem); }
-    @media only screen and (max-width: 75em) {
-      .about__image3 {
-        transform: translate(0, -3rem); } }
-    @media only screen and (max-width: 62.5em) {
-      .about__image3 {
-        transform: translate(8rem, -3rem); } }
-    @media only screen and (max-width: 50em) {
-      .about__image3 {
-        transform: translate(1rem, -3rem); } }
-    @media only screen and (max-width: 30em) {
-      .about__image3 {
-        display: none;
-        visibility: hidden; } }
-  .about__image4 {
-    z-index: 10;
-    position: relative;
-    transform: translate(10rem, 0); }
-    @media only screen and (max-width: 75em) {
-      .about__image4 {
-        transform: translate(0, 2rem); } }
-    @media only screen and (max-width: 62.5em) {
-      .about__image4 {
-        transform: translate(0, 2rem); } }
-    @media only screen and (max-width: 50em) {
-      .about__image4 {
-        transform: translate(-10rem, 2rem); } }
-    @media only screen and (max-width: 31.25em) {
-      .about__image4 {
-        opacity: 0; } }
-    @media only screen and (max-width: 30em) {
-      .about__image4 {
-        display: none;
-        visibility: hidden; } }
+  .about__gallary {
+    margin-top: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .about__gallary {
+        display: flex; } }
+    @media only screen and (max-width: 48em) {
+      .about__gallary {
+        transform: translateX(-7rem); } }
+    @media only screen and (max-width: 40em) {
+      .about__gallary {
+        transform: translateX(-10rem); } }
+    @media only screen and (max-width: 37.5em) {
+      .about__gallary {
+        transform: translateX(-12.5rem); } }
+    .about__gallary img {
+      width: 55rem;
+      height: 70rem;
+      display: block;
+      object-fit: cover;
+      filter: brightness(70%);
+      transition: all 0.3s;
+      box-shadow: 0 1rem 1rem rgba(226, 224, 219, 0.1);
+      border-radius: 5rem; }
+      .about__gallary img:hover {
+        z-index: 20;
+        position: relative;
+        filter: brightness(100%); }
   @media only screen and (max-width: 30em) {
     .about__paragraph {
       width: 30rem; } }
   .about__title {
-    font-size: 3.8rem;
     margin-bottom: 2rem;
-    color: #160A03; }
+    color: #cc8f00; }
     @media only screen and (max-width: 75em) {
       .about__title {
         margin-top: 2rem; } }
-    @media only screen and (max-width: 30em) {
-      .about__title {
-        padding-top: -3rem; } }
     @media only screen and (max-width: 56.25em) {
       .about__title {
         margin-top: 3rem; } }
     @media only screen and (max-width: 30em) {
       .about__title {
-        font-size: 3.3rem; } }
+        font-size: 3.3rem;
+        padding-top: -3rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .about__title {
+        font-size: 2.8rem; } }
     @media only screen and (max-width: 20em) {
       .about__title {
         font-size: 3rem; } }
   .about__text {
     font-size: 2.3rem;
     font-weight: 400;
-    color: #160A03; }
+    color: #E2E0DB !important; }
     @media only screen and (max-width: 48em) {
       .about__text {
         font-size: 2.1rem; } }
@@ -599,8 +666,18 @@ h3 {
         width: 45rem; } }
     @media only screen and (max-width: 30em) {
       .about__text {
-        font-size: 2.2rem;
+        font-size: 2.4rem;
         width: 38rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .about__text {
+        width: 35rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .about__text {
+        font-size: 2rem;
+        width: 33rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .about__text {
+        width: 32rem; } }
     @media only screen and (max-width: 20em) {
       .about__text {
         width: 28rem; } }
@@ -609,6 +686,9 @@ h3 {
   width: 100%;
   height: 140vh;
   position: relative; }
+  @media only screen and (max-width: 25.875em) {
+    .contact {
+      height: 130vh; } }
   .contact__video {
     width: 100%;
     height: 100%;
@@ -634,6 +714,15 @@ h3 {
     @media only screen and (max-width: 30em) {
       .contact__box {
         margin-left: -1rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .contact__box {
+        margin-left: -4rem; } }
+    @media only screen and (max-width: 23.4375em) {
+      .contact__box {
+        margin-left: -1rem; } }
+    @media only screen and (max-width: 22.5em) {
+      .contact__box {
+        margin-left: -2rem; } }
     @media only screen and (max-width: 20em) {
       .contact__box {
         width: 29rem;
@@ -682,6 +771,12 @@ h3 {
   .footer__nav {
     display: flex;
     text-transform: uppercase; }
+    @media only screen and (max-width: 25.875em) {
+      .footer__nav {
+        flex-direction: column; } }
+    @media only screen and (max-width: 24.37em) {
+      .footer__nav {
+        flex-direction: column; } }
     @media only screen and (max-width: 20em) {
       .footer__nav {
         flex-direction: column; } }
@@ -718,6 +813,12 @@ h3 {
       .footer__copyright {
         font-size: 1.6rem;
         width: 43rem; } }
+    @media only screen and (max-width: 25.875em) {
+      .footer__copyright {
+        width: 36rem; } }
+    @media only screen and (max-width: 24.37em) {
+      .footer__copyright {
+        width: 30rem; } }
     @media only screen and (max-width: 20em) {
       .footer__copyright {
         width: 28rem; } }
@@ -797,7 +898,11 @@ h3 {
   background-color: #160A03; }
   @media only screen and (max-width: 31.25em) {
     #menuToggle input:checked ~ ul {
-      width: 56rem; } }
+      width: 55rem;
+      height: 60rem; } }
+  @media only screen and (max-width: 25.875em) {
+    #menuToggle input:checked ~ ul {
+      height: 78rem; } }
 
 #menu {
   position: absolute;
@@ -805,40 +910,12 @@ h3 {
   right: 0;
   height: 100%;
   width: 25rem;
-  list-style-type: none;
   -webkit-font-smoothing: antialiased;
   padding: 15rem 10rem 10rem 4rem;
-  transform-origin: 0% 0%;
-  transform: translate(0, -100%);
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
-  @media only screen and (max-width: 31.25em) {
-    #menu {
-      width: 56rem; } }
-  @media only screen and (max-width: 30em) {
-    #menu {
-      padding-left: 23rem; } }
-  @media only screen and (max-width: 20em) {
-    #menu {
-      transform: translate(20rem, -100%);
-      padding-left: 32rem; } }
-  #menu a {
-    text-decoration: none;
-    font-size: 3rem;
-    color: #666666;
-    display: grid;
-    grid-template-columns: max-content max-content;
-    align-items: center;
-    grid-column-gap: 2rem;
-    margin-bottom: 2rem; }
-    @media only screen and (max-width: 20em) {
-      #menu a {
-        font-size: 2.5rem; } }
-  #menu a:hover {
-    color: #E2E0DB; }
-  #menu a:hover .menu-icon {
-    fill: #cc8f00; }
-  #menu li {
-    list-style: none; }
+  transform-origin: 0% 100%;
+  transform: translate(100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  transition: all .3s; }
   #menu .menu-icon {
     width: 2.5rem;
     height: 2.5rem;
@@ -847,3 +924,153 @@ h3 {
       #menu .menu-icon {
         width: 2.3rem;
         height: 2.3rem; } }
+  @media only screen and (max-width: 31.25em) {
+    #menu {
+      width: 55rem; } }
+  @media only screen and (max-width: 30em) {
+    #menu {
+      padding-left: 23rem; } }
+  @media only screen and (max-width: 25.875em) {
+    #menu {
+      transform: translate(100%, 0%);
+      padding-left: 28rem; } }
+  @media only screen and (max-width: 24.37em) {
+    #menu {
+      padding-left: 28rem;
+      transform: translate(100%, 0%); } }
+  @media only screen and (max-width: 20em) {
+    #menu {
+      transform: translate(100%, 0%);
+      padding-left: 32rem; } }
+  #menu li {
+    list-style: none;
+    color: #666666;
+    display: grid;
+    grid-template-columns: max-content max-content;
+    align-items: center;
+    grid-column-gap: 2rem;
+    margin-bottom: 2rem; }
+    @media only screen and (max-width: 20em) {
+      #menu li {
+        font-size: 2.5rem; } }
+  #menu a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #666666; }
+  #menu a:hover {
+    color: #cc8f00; }
+  #menu a:hover ~ .menu-icon {
+    fill: #cc8f00; }
+
+.popup__box {
+  background-color: rgba(22, 10, 3, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden; }
+
+.popup__message-box {
+  background-color: #F0F0F0;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 1rem;
+  padding: 2rem 5rem;
+  box-sizing: border-box;
+  position: relative; }
+  @media only screen and (max-width: 24.37em) {
+    .popup__message-box {
+      width: 37rem; } }
+
+.popup__icon-close {
+  height: 3rem;
+  width: 3rem;
+  fill: #160A03;
+  position: absolute;
+  top: 1rem;
+  right: 1rem; }
+
+.popup__icon-envelope {
+  height: 5rem;
+  width: 5rem;
+  fill: #1BBF15;
+  margin: 5rem 15rem 2rem 12rem; }
+
+.popup__heading {
+  font-size: 5rem;
+  text-align: center; }
+
+.popup__message {
+  font-family: "Yantramanav", sans-serif;
+  font-size: 2.3rem;
+  color: #cc8f00;
+  font-weight: 600;
+  text-align: center; }
+
+.blog-header {
+  background-image: linear-gradient(to bottom, rgba(22, 10, 3, 0.8), rgba(22, 10, 3, 0.8)), url(../img/blog-1-bg-s.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative; }
+
+.blog__heading {
+  width: 100rem; }
+
+.blog {
+  width: 70%;
+  height: auto;
+  margin: 0 15% 0 15%;
+  transform: translateY(-10rem);
+  margin-bottom: -10rem; }
+  .blog__body {
+    background-color: #F0F0F0; }
+
+.article {
+  padding: 8rem 5rem 0 5rem;
+  background-color: white; }
+  .article__title {
+    color: #160A03;
+    font-weight: 400; }
+  .article__paragraph {
+    font-size: 2.2rem;
+    font-family: "Yantramanav", sans-serif;
+    font-weight: 300;
+    line-height: 1.7;
+    letter-spacing: 1.7; }
+  .article__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 3rem;
+    justify-content: center; }
+  .article__space {
+    padding-bottom: 5rem; }
+  .article__icon {
+    transform: translateY(7px);
+    fill: #cc8f00; }
+
+.blog__author {
+  width: 100%;
+  height: auto;
+  display: flex;
+  background-color: white; }
+  .blog__author-image {
+    width: 15rem;
+    height: 15rem;
+    margin: 2rem 2rem 0 5rem; }
+  .blog__author-i {
+    width: 100%;
+    height: 100%;
+    border-radius: 50rem;
+    object-fit: cover; }
+  .blog__author-data {
+    margin: 6rem 2rem 0 1rem;
+    display: flex;
+    flex-direction: column; }
+  .blog__author-name {
+    display: inline; }
+  .blog__author-n {
+    font-weight: 300; }

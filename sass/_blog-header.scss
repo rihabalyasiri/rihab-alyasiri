@@ -1,0 +1,16 @@
+.blog-header {
+    background-image: linear-gradient(to bottom, rgba($color-dark,.8),rgba($color-dark,.8)), url(../img/blog-1-bg-s.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    @extend %clearfix;
+}
+
+ 
+    .blog__heading {
+         @extend %centering;
+        width: 100rem;
+       
+;
+    }

@@ -3,6 +3,10 @@
     height: 140vh;
     position: relative;
     
+     @include respond(samsung-10) {
+            height: 130vh;
+    }
+    
     
     
     &__video {
@@ -10,6 +14,8 @@
         height: 100%;
         object-fit: cover;
         opacity: .2;
+        
+       
         
     }
     
@@ -43,6 +49,17 @@
            margin-left: -1rem;
         }
         
+         @include respond(samsung-10) {
+            margin-left: -4rem;
+    }
+        
+         @include respond(iphone-8) {
+             margin-left: -1rem;
+    }
+        
+         @include respond(samsung-9) {
+             margin-left: -2rem;
+    }
         @include responsive($bp-320) {
             width: 29rem;
             margin-left: -6px;
