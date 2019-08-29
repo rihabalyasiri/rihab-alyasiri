@@ -18,3 +18,40 @@
         @content;
     }
 }
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == samsung-10 {
+        @media only screen and (max-width:25.875em) {         //414px
+            @content;
+        }
+    }
+    @if $breakpoint == samsung-9 {
+        @media only screen and (max-width:22.5em) {            //360px
+            @content;
+        }
+    }
+    @if $breakpoint == iphone-8 {
+        @media only screen and (max-width:23.4375em) {          //375px
+            @content;
+        }
+    }
+    @if $breakpoint == tab {
+        @media only screen and (max-width:48em) {          //768px
+            @content;
+        }
+    }
+
+}
+
+@keyframes goDown {
+    
+    0% {
+        opacity: 0;
+       
+    }
+    
+    100% {
+        opacity: 1;
+      
+    }
+}

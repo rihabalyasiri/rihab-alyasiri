@@ -10,6 +10,16 @@
         display: flex;
         text-transform: uppercase;
         
+          @include respond(samsung-10) {
+           flex-direction: column;
+           
+    }
+        
+         @include responsive($bp-390) {
+            flex-direction: column;
+        }
+    
+        
         @include responsive($bp-320) {
             flex-direction: column;
             
@@ -67,6 +77,15 @@
          @include responsive($bp-480) {
             font-size: 1.6rem;
              width: 43rem;
+        }
+        
+        @include respond(samsung-10) {
+           width: 36rem;
+    }
+        
+        
+        @include responsive($bp-390) {
+            width: 30rem;
         }
         
          @include responsive($bp-320) {

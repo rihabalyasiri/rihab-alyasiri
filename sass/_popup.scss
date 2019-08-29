@@ -1,0 +1,68 @@
+.popup {
+    
+    &__box {
+        background-color:rgba($color-dark,.95);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    &__message-box{
+        @extend %centering;
+        background-color: $color-gray-bg;
+        width: 40rem;
+        height: 40rem;
+        border-radius: 1rem;
+        padding: 2rem 5rem;
+        box-sizing: border-box;
+        position: relative;
+        
+         @include responsive($bp-390) {
+           
+          width: 37rem;
+         
+        
+            
+        }
+   
+        
+    }
+    
+    &__icon-close {
+         height: 3rem;
+        width: 3rem;
+        fill:$color-dark;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        
+    }
+    
+    &__icon-envelope {
+        
+        height: 5rem;
+        width: 5rem;
+        fill:#1BBF15;
+        margin: 5rem 15rem 2rem 12rem;
+    }
+    
+    &__heading {
+        font-size: 5rem;
+        text-align:center;
+    }
+    
+    &__message {
+        font-family: $font-text;
+        font-size: 2.3rem;
+        color:$color-primary-dark;
+        font-weight: 600;
+        text-align: center;
+    }
+    
+
+}
